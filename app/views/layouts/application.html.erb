@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FamilyGap</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if current_user %>
+  Signed in as <%= current_user.display_name %>!
+  <%= link_to "Sign out", signout_path %>
+  <br/>
+  <%= current_user.token %>
+<% else %>
+  <%= link_to "Sign in with FamilySearch", "/auth/familysearch" %>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>
