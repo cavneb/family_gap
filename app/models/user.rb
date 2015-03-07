@@ -4,7 +4,10 @@ class User < ActiveRecord::Base
   validates :email, presence: true
 
   def self.from_omniauth(auth)
-    where(uid: auth.uid).first || create_from_omniauth(auth)
+    current_user = where(uid: auth.uid).first || create_from_omniauth(auth)
+    puts "ACCESS TOKEN: #{auth.credentials.token}"
+    current_user.update_attribute(:access_token, auth.credentials.token)
+    current_user
   end
 
   def self.create_from_omniauth(auth)
@@ -14,7 +17,6 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user.name = auth.info.name
       user.email = auth.info.email
-      user.token = auth.credentials.token
       user.links = extra.links.as_json
       user.contact_name = extra.contactName
       user.helper_access_pin = extra.helperAccessPin

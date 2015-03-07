@@ -12,7 +12,7 @@
   Signed in as <%= current_user.display_name %>!
   <%= link_to "Sign out", signout_path %>
   <br/>
-  <%= current_user.token %>
+  ACCESS TOKEN: <%= current_user.access_token %>
 <% else %>
   <%= link_to "Sign in with FamilySearch", "/auth/familysearch" %>
 <% end %>

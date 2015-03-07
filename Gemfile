@@ -18,6 +18,8 @@ gem 'omniauth'
 gem 'omniauth-familysearch'
 gem 'typhoeus'
 
+gem 'familysearch', '~> 0.4.0', github: 'cavneb/familysearch-rb'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

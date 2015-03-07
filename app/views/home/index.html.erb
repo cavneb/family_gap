@@ -1,2 +1,4 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% if @me %>
+  <h1>Welcome <%= @me.displayName %></h1>
+  <h3>Ancestry: <%= @ancestry.inspect %></h3>
+<% end %>

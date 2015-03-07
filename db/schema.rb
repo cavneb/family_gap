@@ -22,7 +22,8 @@ ActiveRecord::Schema.define(version: 20150303022804) do
     t.string   "email"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.string   "token"
+    t.string   "authorization_code"
+    t.string   "access_token"
     t.json     "links"
     t.string   "contact_name"
     t.string   "helper_access_pin"

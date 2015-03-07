@@ -1,6 +1,7 @@
 class AddAdditionalFieldsToUsers < ActiveRecord::Migration
   def change
-    add_column :users, :token, :string
+    add_column :users, :authorization_code, :string
+    add_column :users, :access_token, :string
     add_column :users, :links, :json
     add_column :users, :contact_name, :string
     add_column :users, :helper_access_pin, :string
