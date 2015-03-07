@@ -1,4 +1,10 @@
-<% if @me %>
-  <h1>Welcome <%= @me.displayName %></h1>
-  <h3>Ancestry: <%= @ancestry.inspect %></h3>
+<% if @person %>
+  <h1>Welcome <%= current_user.display_name %></h1>
+  <h3>Person</h3>
+  <pre><code><%= JSON.pretty_generate @person.as_json %></code></pre>
+  <h3>Spouses
+    <textarea><%= @spouses.to_json %></textarea>
+  </h3>
+  <h3>Parents:
+    <textarea><%= @parents.to_json %></textarea></h3>
 <% end %>

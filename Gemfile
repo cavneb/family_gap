@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'omniauth'
 gem 'omniauth-familysearch'
 gem 'typhoeus'
+gem 'chronic'
 
 gem 'familysearch', '~> 0.4.0', github: 'cavneb/familysearch-rb'
 
